@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Deck } from '../models/deck';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ export class DecksService {
 
   constructor(private http: HttpClient) {}
 
-  getAllDecks(): Observable<any[]> {
-    return this.http.get<any[]>(this.url);
+  getAllDecks(): Observable<Deck[]> {
+    return this.http.get<Deck[]>(this.url);
   }
 }
