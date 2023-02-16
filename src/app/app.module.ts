@@ -21,7 +21,7 @@ import { DeckDetailsComponent } from './decks/deck-details/deck-details.componen
     NgbModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent],
