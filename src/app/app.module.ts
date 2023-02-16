@@ -10,9 +10,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { DeckComponent } from './decks/deck/deck.component';
+import { DeckDetailsComponent } from './decks/deck-details/deck-details.component';
 
 @NgModule({
-  declarations: [AppComponent, DecksListComponent, DeckComponent],
+  declarations: [AppComponent, DecksListComponent, DeckComponent, DeckDetailsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
