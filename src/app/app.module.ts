@@ -7,10 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { DecksListComponent } from './decks/decks-list/decks-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, DecksListComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule, FontAwesomeModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule, FontAwesomeModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
