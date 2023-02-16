@@ -1,5 +1,9 @@
-<p>decks-list works!</p>
-
-<ul *ngFor="let deck of decks;">
+<!-- <ul *ngFor="let deck of decks;">
   <li>{{deck.deckName}} / {{deck.cards.length}} cards</li>
-</ul>
+</ul> -->
+
+<mat-grid-list cols="6" rowHeight="3:2">
+  <p *ngFor="let deck of decks;">
+    <mat-grid-tile colspan="1"><app-deck [deck]="deck"></app-deck></mat-grid-tile>
+  </p>
+</mat-grid-list>
