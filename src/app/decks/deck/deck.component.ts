@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Deck } from 'src/app/models/deck';
+import { Deck } from 'src/app/models/Deck';
 
 @Component({
   selector: 'app-deck',

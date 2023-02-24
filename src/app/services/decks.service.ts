@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Deck } from '../models/deck';
+import { Deck } from '../models/Deck';
 
 @Injectable({
   providedIn: 'root',
@@ -14,4 +14,9 @@ export class DecksService {
   getAllDecks(): Observable<Deck[]> {
     return this.http.get<Deck[]>(this.url);
   }
+
+  getSingleDeck(deckId: number): Observable<Deck> {
+    return this.http.get<Deck>(this.url + '/' + deckId);
+  }
+
 }

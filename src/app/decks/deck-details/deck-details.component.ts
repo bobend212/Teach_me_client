@@ -1,39 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+import { ActivatedRoute } from '@angular/router';
+import { Card } from 'src/app/models/Card';
+import { Deck } from 'src/app/models/Deck';
+import { DecksService } from 'src/app/services/decks.service';
 
 @Component({
   selector: 'app-deck-details',
   templateUrl: './deck-details.component.html',
-  styleUrls: ['./deck-details.component.css']
+  styleUrls: ['./deck-details.component.css'],
 })
 export class DeckDetailsComponent implements OnInit {
+  displayedColumns: string[] = ['dateCreated', 'status', 'front', 'details'];
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  deck: Deck | undefined;
+  deckCards: Card[] = [];
+  resultsLength = 0;
 
-  constructor() { }
+  constructor(
+    private deckService: DecksService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    
+    this.loadDeck();
   }
 
+  loadDeck() {
+    this.deckService
+      .getSingleDeck(+this.route.snapshot.params['deckId'])
+      .subscribe({
+        next: (deck) => {
+          this.deck = deck,
+          this.deckCards = deck.cards,
+          this.resultsLength = deck.cards.length
+        },
+        error: (e) => console.error(e),
+      });
+  }
 }

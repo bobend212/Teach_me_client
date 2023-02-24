@@ -3,4 +3,5 @@ export interface Card {
   front: string;
   back: string;
   status: string;
+  dateCreated: string;
 }
