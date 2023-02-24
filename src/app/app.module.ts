@@ -11,9 +11,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { DeckComponent } from './decks/deck/deck.component';
 import { DeckDetailsComponent } from './decks/deck-details/deck-details.component';
+import { CardsListComponent } from './cards/cards-list/cards-list.component';
+import { CardComponent } from './cards/card/card.component';
 
 @NgModule({
-  declarations: [AppComponent, DecksListComponent, DeckComponent, DeckDetailsComponent],
+  declarations: [AppComponent, DecksListComponent, DeckComponent, DeckDetailsComponent, CardsListComponent, CardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

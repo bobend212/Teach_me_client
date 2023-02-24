@@ -2,16 +2,20 @@
   <div class="sidebar">
     <h2>teach_me</h2>
     <ul>
-      <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>
-          Home</a></li>
-      <li><a href="/"><i class="fa fa-bandcamp" aria-hidden="true"></i>
-          Decks</a></li>
-      <li><a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>
-          Cards</a></li>
+      <li><a href="/">
+        <mat-icon>home</mat-icon> Home</a></li>
+      <li><a href="/">
+        <mat-icon>local_library</mat-icon> Decks</a></li>
+      <li><a href="cards">
+        <mat-icon>sell</mat-icon> Cards</a></li>
     </ul>
   </div>
   <div class="main_content">
-    <div class="header">latest decks:</div>
+    <div class="header">
+      <button mat-raised-button style="margin-right: 5px;"><mat-icon>local_library</mat-icon> ADD DECK</button>
+      <button mat-raised-button><mat-icon>sell</mat-icon> ADD CARD</button>
+
+    </div>
     <div class="info">
       <router-outlet></router-outlet>
     </div>
